@@ -1,0 +1,17 @@
+<% if @link.id.blank? %>
+  <%= form_for @link do |f| %>
+    <div class="row justify-content-md-center m-5">
+      <div class="input-group mb-3" style="width: 40%">
+        <%= text_field_tag 'original_url', nil, type: :url, class: 'form-control', placeholder: 'URL', 'aria-label':"URL", 'aria-describedby':"button-addon2", required: true  %>
+        <div class="input-group-append">
+          <%= f.submit 'Generate', class: 'btn btn-primary', id: 'button-addon2' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="row justify-content-md-center">
+    <a href=<%= @link.short_url %>><%= root_url + @link.short_url %></a>
+    <a class='ml-5' href=<%= root_path %>>Back</a>
+  </div>
+<% end %>
