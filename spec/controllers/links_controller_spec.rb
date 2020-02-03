@@ -14,5 +14,10 @@ RSpec.describe LinksController, type: :controller do
       get :show, params: { short_url: link.short_url }
       expect(response).to redirect_to link.original_url
     end
+
+    it 'should redirect to not found' do
+      get :show, params: { short_url: 'test' }
+      expect(response).to have_http_status :not_found
+    end
   end
 end
