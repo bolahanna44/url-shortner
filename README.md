@@ -1,11 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version 2.6.5
+edit database.yml with your configuration use Ruby version 2.6.5 then run the follwoing to start
 
 ```
 bundle
@@ -13,7 +8,9 @@ rails db:create db:migrate
 rails s -p 4567
 ```
 
-for testing 
+hit http://localhost:4567
+
+for testing hit
 
 ```
 rspec
